@@ -10,35 +10,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unir.citas.model.Paciente;
-import com.unir.citas.service.IPacienteService;
+import com.unir.citas.model.Medico;
+import com.unir.citas.service.IMedicoService;
 
 
 @RestController
-@RequestMapping("/clinica/pacientes/")
-public class PacienteController {
+@RequestMapping("/clinica/medicos/")
+public class MedicoController {
 
 	@Autowired
-	private IPacienteService service;
+	private IMedicoService service;
 	
 	@GetMapping
-	public List<Paciente> listar(){
+	public List<Medico> listar(){
 		return service.listar();
 	}
 	
 	@GetMapping("{id}")
-	public Paciente leerPorId(@PathVariable("id") Long id) {
+	public Medico leerPorId(@PathVariable("id") Long id) {
 		return service.leerPorId(id).get();
 	}
 	
 	@PostMapping
-	public void registrar(Paciente psc) {
-		service.registrar(psc);
+	public void registrar(Medico med) {
+		service.registrar(med);
 	}
 	
 	@PutMapping
-	public void modificar(Paciente pac) {
-		service.modificar(pac);
+	public void modificar(Medico med) {
+		service.modificar(med);
 	}
 	
 }

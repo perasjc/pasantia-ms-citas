@@ -32,15 +32,13 @@ import com.unir.citas.dto.ConsultaListaExamenDTO;
 import com.unir.citas.dto.ConsultaResumenDTO;
 import com.unir.citas.dto.FiltroConsultaDTO;
 import com.unir.citas.exception.ModelNotFoundException;
-//import com.unir.citas.model.Archivo;
 import com.unir.citas.model.ConsultaPaciente;
 import com.unir.citas.service.IConsultaPacienteService;
-//import com.unir.citas.service.IArchivoService;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/consultas")
+@RequestMapping("/api/consultas/")
 public class ConsultaController {
 
 	@Autowired

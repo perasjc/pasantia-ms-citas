@@ -15,7 +15,7 @@ import com.unir.citas.model.ConsultaExamen;
 import com.unir.citas.service.IConsultaExamenService;
 
 @RestController
-@RequestMapping("/consultaexamenes")
+@RequestMapping("/api/consultaexamenes/")
 public class ConsultaExamenController {
 	
 	@Autowired

@@ -1,10 +1,10 @@
-package com.unir.citas;
+package com.unir.spring_security_jwt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsCitasApplicationTests {
+class SpringSecurityJwtApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.unir.citas.model.ConsultaExamen;
 
+
 @Repository
 public interface IConsultaExamenRepository extends JpaRepository<ConsultaExamen,Long>{
 

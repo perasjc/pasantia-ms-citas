@@ -1,42 +1,45 @@
 package com.unir.citas.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-/*import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;*/
 import org.springframework.stereotype.Service;
 
 import com.unir.citas.model.Usuario;
 import com.unir.citas.repository.IUsuarioRepo;
+import com.unir.citas.service.IUsuarioService;
 
 @Service
-public class UsuarioServiceImpl {//implements UserDetailsService{
-/*
+public class UsuarioServiceImpl implements IUsuarioService {
+
 	@Autowired
-	private IUsuarioRepo repo;
+	private IUsuarioRepo repo; 
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Usuario usuario = repo.findOneByUsername(username);
+	public void registrar(Usuario user) {
+		repo.save(user);
+	}
+
+	@Override
+	public void modificar(Usuario user) {
+		repo.save(user);		
+	}
+
+	@Override
+	public List<Usuario> listar() {
+		return repo.findAll();
+	}
+
+	@Override
+	public Optional<Usuario> leerPorId(Integer id) {
+		return repo.findById(id);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		repo.deleteById(id);
 		
-		if(usuario == null) {
-			throw new UsernameNotFoundException(String.format("Usuario no existe", username));
-		}
-		
-		List<GrantedAuthority> roles = new ArrayList<>();
-		
-		usuario.getRoles().forEach(rol -> {
-			roles.add(new SimpleGrantedAuthority(rol.getNombre()));
-		});
-		
-		UserDetails userDetails = new User(usuario.getUsername(), usuario.getPassword(), roles);
-		return userDetails;
-	
-	}*/
+	}
+
 }

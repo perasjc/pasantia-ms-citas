@@ -10,35 +10,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unir.citas.model.Paciente;
-import com.unir.citas.service.IPacienteService;
+import com.unir.citas.model.HorarioMedico;
+import com.unir.citas.service.IHorarioMedicoService;
 
 
 @RestController
-@RequestMapping("/clinica/pacientes/")
-public class PacienteController {
+@RequestMapping("/clinica/horarios/")
+public class HorarioMedicoController {
 
 	@Autowired
-	private IPacienteService service;
+	private IHorarioMedicoService service;
 	
 	@GetMapping
-	public List<Paciente> listar(){
+	public List<HorarioMedico> listar(){
 		return service.listar();
 	}
 	
 	@GetMapping("{id}")
-	public Paciente leerPorId(@PathVariable("id") Long id) {
+	public HorarioMedico leerPorId(@PathVariable("id") Long id) {
 		return service.leerPorId(id).get();
 	}
 	
 	@PostMapping
-	public void registrar(Paciente psc) {
-		service.registrar(psc);
+	public void registrar(HorarioMedico hmed) {
+		service.registrar(hmed);
 	}
 	
 	@PutMapping
-	public void modificar(Paciente pac) {
-		service.modificar(pac);
+	public void modificar(HorarioMedico hmed) {
+		service.modificar(hmed);
 	}
 	
 }
